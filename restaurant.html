@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyD1OipKT9lAER_19bjJlUSjlr8FiAeLCbo",
+            authDomain: "foodapp-d6b20.firebaseapp.com",
+            projectId: "foodapp-d6b20",
+            storageBucket: "foodapp-d6b20.appspot.com",
+            messagingSenderId: "603547835798",
+            appId: "1:603547835798:web:20784a8c9dd0b0c2b651b7"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+</head>
+
+<body class="overflow-auto" style="background-image: url(../../images/background2.jpg); background-repeat:no-repeat ; background-size: cover; height: 100%;">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Restaurant Menu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Pending
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="pending">
+                            <li><a class="dropdown-item" role="button" onclick="pending1()">Biryani Order</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Accepted
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="accepted">
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Delivered
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="delivered">
+
+                        </ul>
+                    </li>
+                </ul>
+                <form onsubmit="return false" class="d-flex">
+                    <button class="btn btn-outline-danger" onClick="logout()">Logout</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-3">
+        <form onsubmit="return false" class="row g-3">
+            <h3>Post Dish</h3>
+            <div class="col-md-4">
+                <label for="itemName" class="form-label">Item Name</label>
+                <input type="text" placeholder="Dish" class="form-control" id="itemName">
+            </div>
+            <div class="col-md-4">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" placeholder="In PKR" class="form-control" id="price">
+            </div>
+            <div class="col-md-4">
+                <label for="category" class="form-label">Category</label>
+                <select class="form-select  mb-3" aria-label=".form-select-lg example" id="dropDown" onChange="changeCategory()">
+                    <option value="Pakistani" selected>Pakistani</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="American">American</option>
+                    <option value="British">British</option>
+                </select>
+            </div>
+            <div class="row">
+                <h5>Delivery: Free</h5>
+            </div>
+            <div class="col">
+                <button class="btn btn-primary px-3 py-2" onClick="post()">Post</button>
+            </div>
+            <div id="message" class="alert alert-secondary"></div>
+
+        </form>
+        <div id="div" class="d-flex flex-wrap">
+
+        </div>
+    </div>
+</body>
+<script src="restaurant.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</html>

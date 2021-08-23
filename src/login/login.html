@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login.html</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyD1OipKT9lAER_19bjJlUSjlr8FiAeLCbo",
+            authDomain: "foodapp-d6b20.firebaseapp.com",
+            projectId: "foodapp-d6b20",
+            storageBucket: "foodapp-d6b20.appspot.com",
+            messagingSenderId: "603547835798",
+            appId: "1:603547835798:web:20784a8c9dd0b0c2b651b7"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+
+<body class="overflow-auto" style="background-image: url(../../images/background1.jpg); background-repeat:no-repeat ; background-size: cover; height: 98vh;">
+
+    <div class="container text-white">
+        <h1 class="mb-3 mt-3">Login</h1>
+        <form onsubmit="return false">
+            <div class="mb-3 form-group w-50">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" required>
+                <div id="emailHelp" class="form-text text-white">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3 form-group w-50">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" required>
+            </div>
+            <div class="mb-2">
+                <button type="submit" class="btn btn-primary" onClick="login()">Login</button>
+                <a class="btn btn-outline-danger mt-2" href="../signup/signup.html" role="button">User Signup</a>
+                <a class="btn btn-outline-danger mt-2" href="../restaurantSignup/restaurantSignup.html" role="button">Restaurant Signup</a>
+            </div>
+            <div id="message" class="alert alert-secondary"></div>
+
+</body>
+<script src="login.js"></script>
+
+</html>

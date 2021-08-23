@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index.html</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyD1OipKT9lAER_19bjJlUSjlr8FiAeLCbo",
+            authDomain: "foodapp-d6b20.firebaseapp.com",
+            projectId: "foodapp-d6b20",
+            storageBucket: "foodapp-d6b20.appspot.com",
+            messagingSenderId: "603547835798",
+            appId: "1:603547835798:web:20784a8c9dd0b0c2b651b7"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+</head>
+
+<body class="overflow-auto" style="background-image: url(../../images/background2.jpg); background-repeat:no-repeat ; background-size: cover; height: 100%;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Food Delivery</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <form class="d-flex" onsubmit="return false">
+                <input class="form-control me-2" type="search" id="search" placeholder="Search is available" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+                <a class="btn btn-primary mx-2" id="login" href="src/login/login.html">Login</a>
+                <a class="btn btn-primary" id="signup" href="src/signup/signup.html">Signup</a>
+                <a class="btn btn-outline-danger mx-1" id="logout1" role="button" onclick="logout()">Logout</a>
+            </form>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="m-4">Click To Order Your Food and Enjoy ;)</h1>
+        <div id="message" class="alert alert-secondary mb-2"></div>
+        <div id="dashBoard" class="d-flex flex-wrap">
+
+        </div>
+    </div>
+</body>
+<script src="app.js"></script>
+
+</html>
